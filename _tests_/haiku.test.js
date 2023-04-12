@@ -18,5 +18,13 @@ describe('Haiku', () =>{
     expect(haiku.line3).toEqual(["h","e","l","l","o"]);
   });
 
-  test("should verify the number of vowels in a given string")
+  test("should count all vowels in a string", () => {
+    const haiku = new Haiku("hi","yo","hello");
+    haiku.vowelCounter();
+    expect(haiku.syllableArray[0]).toEqual(1);
+    expect(haiku.syllableArray[1]).toEqual(1);
+    expect(haiku.syllableArray[2]).toEqual(2);
+  });
+
+
 });
