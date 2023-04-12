@@ -1,6 +1,6 @@
-//import 
+import Haiku from "../src/haiku";
 
-describe('check', () =>{
+describe('Haiku', () =>{
 
   test("should verify if there are 3 seperate strings", () => {
     const haiku = new Haiku("hi","yo","hello");
