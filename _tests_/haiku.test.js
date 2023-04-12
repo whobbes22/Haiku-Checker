@@ -8,6 +8,7 @@ describe('Haiku', () =>{
     expect(haiku.line1).toEqual("hi");
     expect(haiku.line2).toEqual("yo");
     expect(haiku.line3).toEqual("hello");
+    expect(haiku.originalHaiku).toEqual(["hi","yo","hello"])
   });
 
   test("Should split strings into an array each index containing 1 letter", () => {
