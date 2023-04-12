@@ -37,6 +37,15 @@ describe('Haiku', () =>{
     expect(haiku.vowelArray[1]).toEqual(2);
     expect(haiku.vowelArray[2]).toEqual(1);
   }); 
+
+  test("should count words that contain a diphthong as one syllabe words", () => {
+    const haiku = new Haiku("moon","coin", "bread");
+    haiku.splitter();
+    haiku.vowelCounter();
+    expect(haiku.vowelArray[0]).toEqual(1);
+    expect(haiku.vowelArray[1]).toEqual(1);
+    expect(haiku.vowelArray[2]).toEqual(1);
+  });
 });
 
  
