@@ -64,6 +64,16 @@ describe('Haiku', () =>{
     expect(haiku.vowelArray[1]).toEqual(1);
     expect(haiku.vowelArray[2]).toEqual(1);
   });
+
+  test("should add to syllable counter based on if a word has a vowel sound based on if sound is only 1 letter", () => {
+    const haiku = new Haiku("hi","stretch", "cc");
+    haiku.splitter();
+    haiku.vowelCounter();
+    expect(haiku.vowelArray[0]).toEqual(1);
+    expect(haiku.vowelArray[1]).toEqual(1);
+    expect(haiku.vowelArray[2]).toEqual(0);
+  });
+
 });
 
  
