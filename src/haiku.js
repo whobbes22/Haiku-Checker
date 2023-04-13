@@ -34,8 +34,15 @@ vowelCounter() {
     let numberOfVowels = 0;
     for (let i = 0; i < this.lineArray[j].length;i++){
       const threeLetters = this.lineArray[j][i] + this.lineArray[j][i+1] + this.lineArray[j][i+2];
+      const twoLetters = threeLetters.slice(0,2);
+      console.log(3,threeLetters);
+      console.log(2,twoLetters);
       if(threeLetterSoundArray.includes(threeLetters)){
         numberOfVowels++;
+        i = i+2;
+      } else if (twoLetterSoundArray.includes(twoLetters)){
+        numberOfVowels++;
+        i= i+1;
       }
       }
       this.vowelArray[j] = numberOfVowels;
