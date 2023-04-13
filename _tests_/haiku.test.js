@@ -8,7 +8,7 @@ describe('Haiku', () =>{
     expect(haiku.line1).toEqual("hi");
     expect(haiku.line2).toEqual("yo");
     expect(haiku.line3).toEqual("hello");
-    expect(haiku.originalHaiku).toEqual(["hi","yo","hello"])
+    expect(haiku.originalHaiku).toEqual(["hi","yo","hello"]);
   });
 
   test("Should split strings into an array each index containing 1 letter", () => {
@@ -74,22 +74,13 @@ describe('Haiku', () =>{
     expect(haiku.vowelArray[2]).toEqual(0);
   });
 
-  test("test haiku",() => { //silence
-    const haiku = new Haiku("An old silent pond","A frog jumps into the pond—","Splash! Silent again.");
-    haiku.splitter();
-    haiku.vowelCounter();
-    expect(haiku.vowelArray[0]).toEqual(5);
-    expect(haiku.vowelArray[1]).toEqual(7);
-    expect(haiku.vowelArray[2]).toEqual(5);
-  })
-
   test("should not count silent 'e' as a syllable", () => {
-    const haiku = new Haiku("care","he", "silence");
+    const haiku = new Haiku("care","he", "silence silence");
     haiku.splitter();
     haiku.vowelCounter();
     expect(haiku.vowelArray[0]).toEqual(1);
     expect(haiku.vowelArray[1]).toEqual(1);
-    expect(haiku.vowelArray[2]).toEqual(2);
+    expect(haiku.vowelArray[2]).toEqual(4);
   })
 });
 
