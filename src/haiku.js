@@ -15,37 +15,39 @@ export default class Haiku{
     this.lineArray = [this.line1,this.line2,this.line3];
     // this.lineArray[0].length = ???
   }
-  
-vowelCounter() {
-  this.line1.push(" ");
-  this.line2.push(" ");
-  this.line3.push(" ");
+    
+  vowelCounter() {
+    this.line1.push(" ");
+    this.line2.push(" ");
+    this.line3.push(" ");
 
-  this.vowelArray = [0,0,0];
+    this.vowelArray = [0,0,0];
 
-  // sheep
-  // beau
+    // sheep
+    // beau
 
-  const threeLetterSoundArray = ["eau","ice","ace","uce","ece","oce","ire","ure"];
-  const twoLetterSoundArray = ["ai","ay","ee","ea","ie","oa","ew","ue","oo","oi","oy","ou"];
-  const oneLetterSoundArray = ["a","e","i","o","u"];
+    const threeLetterSoundArray = ["eau","ice","ace","uce","ece","oce","ire","ure"];
+    const twoLetterSoundArray = ["ai","ay","ee","ea","ie","oa","ew","ue","oo","oi","oy","ou"];
+    const oneLetterSoundArray = ["a","e","i","o","u"];
 
-  for(let j = 0; j< this.vowelArray.length;j++){ 
-    let numberOfVowels = 0;
-    for (let i = 0; i < this.lineArray[j].length;i++){
-      const threeLetters = this.lineArray[j][i] + this.lineArray[j][i+1] + this.lineArray[j][i+2];
-      const twoLetters = threeLetters.slice(0,2);
-      console.log(3,threeLetters);
-      console.log(2,twoLetters);
-      if(threeLetterSoundArray.includes(threeLetters)){
-        numberOfVowels++;
-        i = i+2;
-      } else if (twoLetterSoundArray.includes(twoLetters)){
-        numberOfVowels++;
-        i= i+1;
+    for(let j = 0; j< this.vowelArray.length;j++){ 
+      let numberOfVowels = 0;
+      for (let i = 0; i < this.lineArray[j].length;i++){
+        const threeLetters = this.lineArray[j][i] + this.lineArray[j][i+1] + this.lineArray[j][i+2];
+        const twoLetters = threeLetters.slice(0,2);
+        console.log(3,threeLetters);
+        console.log(2,twoLetters);
+        if(threeLetterSoundArray.includes(threeLetters)){
+          numberOfVowels++;
+          i = i+2;
+        } else if (twoLetterSoundArray.includes(twoLetters)){
+          numberOfVowels++;
+          i= i+1;
+        } else if (oneLetterSoundArray.includes(this.lineArray[j][i])){
+          numberOfVowels++;
+        }
       }
-      }
-      this.vowelArray[j] = numberOfVowels;
+        this.vowelArray[j] = numberOfVowels;
     }
   }
 }
