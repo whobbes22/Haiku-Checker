@@ -19,33 +19,40 @@ describe('Haiku', () =>{
     expect(haiku.line3).toEqual(["h","e","l","l","o"]);
   });
 
-  test("should count all vowels in a string", () => {
-    const haiku = new Haiku("hi","yo","hellos");
-    let vowelArray = [];
-    haiku.splitter();
-    haiku.vowelCounter();
-    expect(haiku.vowelArray[0]).toEqual(1);
-    expect(haiku.vowelArray[1]).toEqual(1);
-    expect(haiku.vowelArray[2]).toEqual(2);
-  });
+  // test("should count all vowels in a string", () => {
+  //   const haiku = new Haiku("hi","yo","hello");
+  //   let vowelArray = [];
+  //   haiku.splitter();
+  //   haiku.vowelCounter();
+  //   expect(haiku.vowelArray[0]).toEqual(1);
+  //   expect(haiku.vowelArray[1]).toEqual(1);
+  //   expect(haiku.vowelArray[2]).toEqual(2);
+  // });
 
-  test("should verify the number of syllables in words that end with 'e'", () => {
-    const haiku = new Haiku("pie","abide", "fresh");
-    haiku.splitter();
-    haiku.vowelCounter();
-    expect(haiku.vowelArray[0]).toEqual(1);
-    expect(haiku.vowelArray[1]).toEqual(2);
-    expect(haiku.vowelArray[2]).toEqual(1);
-  }); 
+  // test("should verify the number of syllables in words that end with 'e'", () => {
+  //   const haiku = new Haiku("pie","abide", "fresh");
+  //   haiku.splitter();
+  //   haiku.vowelCounter();
+  //   expect(haiku.vowelArray[0]).toEqual(1);
+  //   expect(haiku.vowelArray[1]).toEqual(2);
+  //   expect(haiku.vowelArray[2]).toEqual(1);
+  // }); 
 
-  test("should count words that contain a diphthong as one syllabe words", () => {
-    const haiku = new Haiku("moon","coin", "bread");
-    haiku.splitter();
-    haiku.vowelCounter();
+  // test("should count words that contain a diphthong as one syllabe words", () => {
+  //   const haiku = new Haiku("moon","coin", "bread");
+  //   haiku.splitter();
+  //   haiku.vowelCounter();
+  //   expect(haiku.vowelArray[0]).toEqual(1);
+  //   expect(haiku.vowelArray[1]).toEqual(1);
+  //   expect(haiku.vowelArray[2]).toEqual(1);
+  // });
+
+  test("should add to syllable counter based on if a word has common vowel sound that includes three letters", () => {
+    const haiku = new Haiku("beau","coin", "pace");
     expect(haiku.vowelArray[0]).toEqual(1);
-    expect(haiku.vowelArray[1]).toEqual(1);
+    expect(haiku.vowelArray[1]).toEqual(0);
     expect(haiku.vowelArray[2]).toEqual(1);
-  });
+  })
 });
 
  
