@@ -48,10 +48,10 @@ describe('Haiku', () =>{
   // });
 
   test("should add to syllable counter based on if a word has common vowel sound that includes three letters", () => {
-    const haiku = new Haiku("beau","coin", "pace");
+    const haiku = new Haiku("beau beau","coin", "pace");
     haiku.splitter();
     haiku.vowelCounter();
-    expect(haiku.vowelArray[0]).toEqual(1);
+    expect(haiku.vowelArray[0]).toEqual(2);
     expect(haiku.vowelArray[1]).toEqual(0);
     expect(haiku.vowelArray[2]).toEqual(1);
   })
