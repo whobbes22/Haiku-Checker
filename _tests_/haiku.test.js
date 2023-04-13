@@ -82,7 +82,7 @@ describe('Haiku', () =>{
     expect(haiku.vowelArray[1]).toEqual(1);
     expect(haiku.vowelArray[2]).toEqual(4);
   })
-  
+
   test("test haiku",() => { //silence
     const haiku = new Haiku("An old silent pond","A frog jumps into the pond—","Splash! silence again");
     haiku.splitter();
